@@ -2,5 +2,8 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper>
+<mapper namespace="com.sunyanxiong.mapper.ItemsMapper">
+    <select id="queryAllItems" resultType="com.sunyanxiong.po.ItemsCustom">
+        select * from items
+    </select>
 </mapper>
