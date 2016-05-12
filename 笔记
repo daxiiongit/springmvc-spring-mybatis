@@ -1,0 +1,7 @@
+springMVC + spring + MyBatis整合项目
+一、搭建项目
+    1.导入需要的jar 包
+    2.加入相应的配置文件
+
+二、整合 dao 层
+
