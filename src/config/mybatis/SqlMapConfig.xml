@@ -7,7 +7,7 @@
 
     <!-- 配置别名，采用批量扫描的方式，会自定将别名定义为扫描包下的类首字母小写或者大写（都行） -->
     <typeAliases>
-        <package name="com/sunyanxiong/po"/>
+        <package name="com.sunyanxiong.po"/>
     </typeAliases>
 
 </configuration>

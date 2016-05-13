@@ -1,7 +1,9 @@
 package test;
 
 import com.sunyanxiong.mapper.ItemsMapper;
+import com.sunyanxiong.mapper.ItemsMapperCustom;
 import com.sunyanxiong.po.ItemsCustom;
+import com.sunyanxiong.po.QueryItemsVo;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -35,6 +37,24 @@ public class DaoTest {
         // 打印结果
         System.out.println(list);
 
+    }
+
+    // 测试使用动态的方式来查询商品信息
+    @Test
+    public void findItemsDynamic() throws Exception {
+        ItemsMapperCustom itemsMapperCustom = (ItemsMapperCustom) applicationContext.getBean("itemsMapperCustom");
+
+        // 构造测试查询对象
+        /*QueryItemsVo queryItemsVo = new QueryItemsVo();
+        ItemsCustom itemsCustom = new ItemsCustom();
+        itemsCustom.setName("台式机");
+
+        queryItemsVo.setItemsCustom(itemsCustom);
+
+        List<ItemsCustom> list = itemsMapperCustom.findItemsDynamic(queryItemsVo);*/
+
+        List<ItemsCustom> list2 = itemsMapperCustom.findItemsDynamic(null);
+        System.out.println(list2);
     }
 
 }

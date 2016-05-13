@@ -18,7 +18,7 @@
 
     <!-- 1.数据源 -->
     <!-- 获取数据源信息属性文件 -->
-    <context:property-placeholder location="config/datasource/db.properties"></context:property-placeholder>
+    <context:property-placeholder location="classpath*:config/datasource/db.properties"></context:property-placeholder>
 
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="${jdbc.driver}" />
@@ -31,19 +31,17 @@
 
     <!-- 2.配置sqlSessionFactory -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-        
-        <!--配置数据库连接池 -->
+        <!-- 配置MyBatis的配置文件 -->
+        <property name="configLocation" value="config/mybatis/sqlMapConfig.xml"/>
+
+        <!-- 配置数据源 -->
         <property name="dataSource" ref="dataSource"/>
-
-        <!-- 采用configLocation加载mybatis的全局配置文件 -->
-        <property name="configLocation" value="config/mybatis/SqlMapConfig.xml"/>
-
     </bean>
 
     <!-- 3.mapper扫描器的配置 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <!-- 全局扫描包 -->
-        <property name="basePackage" value="com/sunyanxiong/mapper"/>
+        <property name="basePackage" value="com.sunyanxiong.mapper"/>
 
         <!-- 注入sqlSessionFactory -->
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>

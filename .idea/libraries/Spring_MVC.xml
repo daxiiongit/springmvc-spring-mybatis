@@ -36,6 +36,8 @@
       <root url="jar://$PROJECT_DIR$/lib/mybatis-spring-1.2.2.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/junit-4.8.2.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/commons-pool.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/aopalliance-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/aspectjweaver-1.6.11.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
